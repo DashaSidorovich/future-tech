@@ -1,5 +1,11 @@
 @use "helpers" as *;
 
+html {
+  &.isLock {
+    overflow: hidden;
+  }
+}
+
 body {
   @include fluid-text(18, 14);
 
@@ -110,7 +116,7 @@ button {
 
     &::before {
       content: "";
-      
+
       @include abs-center;
       @include square(rem(44));
     }
