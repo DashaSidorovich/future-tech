@@ -1,0 +1,96 @@
+@use "../helpers" as *;
+
+.footer {
+  color: var(--color-dark-40);
+
+  &__body {
+    padding-block: fluid(80, 40);
+    border-bottom: var(--border);
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: start;
+    column-gap: fluid(80, 20);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: rem(40);
+    }
+
+    @include mobile {
+      row-gap: rem(20);
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(36, 16);
+
+      &:last-child {
+        @include tablet {
+          grid-column: -1/1;
+
+          .footer__menu-list {
+            flex-direction: row;
+            column-gap: rem(12);
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(18, 8);
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: rem(8);
+    }
+  }
+
+  &__extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: fluid(40, 24);
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+
+    &-menu {
+      &-list {
+        display: flex;
+      }
+
+      &-item {
+        &:not(:last-child) {
+          padding-right: rem(11);
+
+          @include laptop {
+            padding-right: rem(8);
+          }
+
+          @include mobile-above {
+            border-right: var(--border);
+          }
+        }
+
+        &:not(:first-child) {
+          padding-left: rem(11);
+
+          @include laptop {
+            padding-right: rem(8);
+          }
+        }
+      }
+    }
+  }
+}
