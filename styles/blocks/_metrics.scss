@@ -1,0 +1,57 @@
+@use "../helpers" as *;
+
+.metrics {
+  @include tablet-above {
+    border-top: var(--border);
+  }
+
+  @include tablet {
+    &::before {
+      width: 100vw;
+      right: calc(var(--container-padding-x) * (-1));
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    row-gap: rem(10);
+    padding: rem(50);
+
+    @include laptop {
+      padding: rem(30) rem(40);
+      row-gap: rem(2);
+    }
+
+    @include tablet {
+      padding: rem(20) rem(20);
+      row-gap: rem(0);
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
+  }
+
+  &__value {
+    font-weight: 600;
+  }
+
+  &__sign {
+    color: var(--color-accent);
+  }
+}

@@ -1,7 +1,7 @@
 class Header {
     selectors = {
-        root: '[data-js-header}',
-        overlay: '[data-js-header-overlay}',
+        root: '[data-js-header]',
+        overlay: '[data-js-header-overlay]',
         burgerButton: '[data-js-header-burger-button]'
     }
 
@@ -18,6 +18,8 @@ class Header {
     }
 
     onBurgerButtonClick = () => {
+        console.log('Burger clicked!'); // Добавьте эту строку
+
         this.burgerElement.classList.toggle(this.stateClasses.isActive);
         this.overlayElement.classList.toggle(this.stateClasses.isActive);
         document.documentElement.classList.toggle(this.stateClasses.isLock);
