@@ -4,13 +4,18 @@
 @use "variables";
 @use "globals";
 
+@use "blocks/section";
 @use "blocks/logo";
 @use "blocks/button";
 @use "blocks/icon";
 @use "blocks/burger-button";
 @use "blocks/header";
-
+@use "blocks/tile";
+@use "blocks/tag";
 @use "blocks/badge";
+@use "blocks/list";
+@use "blocks/card";
+
 @use "blocks/soc1als";
 @use "blocks/footer";
 
@@ -19,5 +24,7 @@
 @use "blocks/resources";
 @use "blocks/team";
 @use "blocks/advantage-card";
+
+
 
 

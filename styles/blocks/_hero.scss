@@ -64,7 +64,7 @@
   }
 
   &__advantages {
-    border-block: var(--border);
+    border-top: var(--border);
 
     &-list {
       @include tablet-above {
