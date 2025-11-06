@@ -29,4 +29,8 @@
     color: var(--color-dark);
     font-weight: 500;
   }
+
+  &--dark-gray {
+    background-color: var(--color-dark-10);
+  }
 }

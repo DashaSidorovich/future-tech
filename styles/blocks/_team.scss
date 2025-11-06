@@ -17,6 +17,13 @@
     --personImageSize: #{rem(40)};
   }
 
+  &--big {
+    --personImageSize: #{rem(50)};
+    @include laptop {
+      --personImageSize: #{rem(40)};
+    }
+  }
+
   &__person {
     width: var(--personImageSize);
     background-color: var(--color-dark-15);
@@ -29,6 +36,9 @@
 
     &:not(:first-child) {
       margin-left: calc(var(--personImageSize) / 4 * -1);
+    }
+
+    &--big {
     }
   }
 }
