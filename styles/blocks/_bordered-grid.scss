@@ -1,0 +1,61 @@
+@use "../helpers" as *;
+
+.bordered-grid {
+  --columns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  &--2-cols {
+    --columns: 2;
+  }
+
+  &--3-cols {
+    --columns: 3;
+    --itemPaddingX: #{rem(50)};
+
+    @include laptop {
+      --itemPaddingX: #{rem(40)};
+    }
+
+    @include tablet {
+      --columns: 1;
+
+      .bordered-grid__item:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    }
+
+    @include tablet-above {
+      .bordered-grid__item {
+        /**
+        Элементы 1-й, 2-й колонки
+        **/
+        &:nth-child(3n-2),
+        &:nth-child(3n-1) {
+          padding-right: var(--itemPaddingX);
+          border-right: var(--border);
+        }
+
+        /**
+        Элементы 3-й, 2-й колонки
+        **/
+        &:nth-child(3n),
+        &:nth-child(3n-1) {
+          padding-left: var(--itemPaddingX);
+        }
+
+        /**
+        Элементы 2-й колонки
+        **/
+        &:nth-child(3n-1) {
+          @include ful-vw-centered-line(bottom);
+        }
+      }
+    }
+  }
+
+  &__item {
+    padding-block: fluid(80, 40);
+  }
+}

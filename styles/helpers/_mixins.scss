@@ -62,3 +62,18 @@
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
+
+@mixin ful-vw-centered-line($position: top) {
+  position: relative;
+
+  &::before {
+    @include abs-x;
+
+    content: "";
+    #{$position}: 0;
+
+    width: 100vw;
+    height: rem(1);
+    background-color: var(--color-dark-15);
+  }
+}
