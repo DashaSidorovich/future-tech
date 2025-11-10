@@ -24,7 +24,7 @@
       .bordered-grid__item:not(:last-child) {
         border-bottom: var(--border);
       }
-    }
+    }  
 
     @include tablet-above {
       .bordered-grid__item {
