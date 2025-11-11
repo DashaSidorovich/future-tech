@@ -1,4 +1,4 @@
-@use "../helpers" as *;
+@use '../helpers' as *;
 
 .card {
   @include tablet-above {
@@ -16,11 +16,11 @@
   }
 
   &__preview {
-    padding-left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     row-gap: fluid(60, 20);
+    padding-left: 0;
 
     @include tablet-above {
       border-right: var(--border);
@@ -48,6 +48,13 @@
     &-info {
       display: grid;
       row-gap: fluid(16, 6);
+
+      &:has(.card__rating) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 1rem;
+      }
     }
   }
 
@@ -55,7 +62,7 @@
     padding-right: 0;
 
     @include tablet {
-      padding: rem(30) rem(0);
+      padding: rem(30) 0;
     }
   }
 
@@ -81,9 +88,17 @@
       @include mobile-above {
         grid-template-columns: auto 1fr;
       }
+    }
 
-      @include mobile {
-        row-gap: rem(14);
+    &--3-cols {
+      gap: fluid(50, 20) rem(20);
+
+      @include laptop {
+        column-gap: rem(16);
+      }
+
+      @include mobile-above {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   }
@@ -94,10 +109,6 @@
     justify-content: start;
     row-gap: fluid(20, 4);
 
-    &--wide {
-      grid-column: -1/1;
-    }
-
     &:has(> *:only-child) {
       justify-content: center;
     }
@@ -106,10 +117,36 @@
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-areas:
-        "subtitle button"
-        "description button";
-      column-gap: rem(20);
+        'other link'
+        'other link';
       align-items: center;
+      gap: fluid(14, 10) rem(20);
+    }
+
+    &:not(.tile) {
+      @include mobile-s {
+        grid-template: initial;
+
+        .card__cell-link {
+          grid-area: initial;
+        }
+      }
+    }
+
+    &.tile {
+      @include mobile-s {
+        padding: rem(20);
+      }
+    }
+
+    &--wide {
+      grid-column: -1 / 1;
+    }
+
+    &--wide-on-mobile-s {
+      @include mobile-s {
+        grid-column: -1 / 1;
+      }
     }
 
     &-image {
@@ -125,11 +162,17 @@
 
     &-subtitle {
       font: inherit;
-      color: var(--color-gray-60);
+      color: inherit;
     }
 
     &-link {
-      grid-area: button;
+      grid-area: link;
+    }
+
+    &-description {
+      @include mobile-s {
+        font-size: rem(14);
+      }
     }
   }
 }

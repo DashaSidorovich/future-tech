@@ -1,17 +1,12 @@
-@use "../helpers" as *;
+@use '../helpers' as *;
 
 .rating {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  translate: -50% -50%;
-
   display: inline-flex;
   column-gap: rem(7);
   padding: rem(10) rem(16);
-  border-radius: rem(100);
-  border: var(--border);
   background-color: var(--color-dark);
+  border: var(--border);
+  border-radius: rem(100);
 
   @include laptop {
     column-gap: rem(4);
@@ -20,16 +15,17 @@
 
   &__star {
     --size: #{rem(24)};
-    background: url("/icons/star-gray.svg") center/contain no-repeat;
-
-    @include laptop {
-      --size: #{rem(20)};
-    }
 
     @include square(var(--size));
 
+    background: url('../../icons/star-gray.svg') center/contain no-repeat;
+
     &.is-active {
-      background-image: url("/icons/star-yellow.svg");
+      background-image: url('../../icons/star-yellow.svg');
+    }
+
+    @include laptop {
+      --size: #{rem(20)};
     }
   }
 }
