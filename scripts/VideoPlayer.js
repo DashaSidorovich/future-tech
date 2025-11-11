@@ -21,18 +21,14 @@ class VideoPlayer {
     }
 
     onButtonClick = () => {
-        console.log('Button clicked - playing video');
         this.videoElement.play()
         this.videoElement.controls = true
         this.panelElement.classList.remove(this.stateClasses.isActive)
-        console.log('Panel class after play:', this.panelElement.className);
     }
 
     onVideoPause = () => {
-        console.log('Video paused');
         this.videoElement.controls = false
         this.panelElement.classList.add(this.stateClasses.isActive)
-        console.log('Panel class after pause:', this.panelElement.className);
     }
 
     bindEvents() {
