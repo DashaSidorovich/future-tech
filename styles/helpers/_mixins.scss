@@ -63,11 +63,19 @@
   overflow: hidden !important;
 }
 
-@mixin ful-vw-centered-line($position: top) {
+@mixin ful-vw-centered-line(
+  $position: top,
+  $left: 50%,
+  $right: auto,
+  $translate: -50%
+) {
   position: relative;
 
   &::before {
-    @include abs-x;
+    position: absolute;
+    right: $right;
+    left: $left;
+    translate: $translate;
 
     content: "";
     #{$position}: 0;
