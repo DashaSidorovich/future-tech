@@ -32,7 +32,7 @@
         &:nth-child(even) {
           padding-left: var(--itemPaddingX);
 
-          @include ful-vw-centered-line(bottom, auto, 100%, 50%);
+          @include full-vw-centered-line(bottom, auto, 100%, 50%);
         }
       }
     }
@@ -77,7 +77,7 @@
         Элементы 2-й колонки
         **/
         &:nth-child(3n-1) {
-          @include ful-vw-centered-line(bottom);
+          @include full-vw-centered-line(bottom);
         }
       }
     }

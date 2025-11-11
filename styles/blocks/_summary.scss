@@ -18,4 +18,24 @@
   &__value {
     color: var(--color-light);
   }
+
+  &--2-cols {    
+    .summary__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: rem(30);
+      column-gap: rem(20);
+
+      @include laptop {
+        row-gap: rem(20);
+      }
+    }
+
+    .summary__item {
+      &--wide {
+        grid-column: -1/1;
+        margin-top: rem(20);
+      }
+    }
+  }
 }
