@@ -1,6 +1,6 @@
 title: "Future Tech"
 description: "Многостраничный веб-сайт"
-baseurl: ""
+baseurl: "/future-tech"
 url: ""
 
 theme: jekyll-theme-minimal
