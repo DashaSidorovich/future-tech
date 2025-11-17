@@ -1,0 +1,13 @@
+title: "Future Tech"
+description: "Многостраничный веб-сайт"
+baseurl: ""
+url: ""
+
+theme: jekyll-theme-minimal
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+sass:
+  sass_dir: assets/css
