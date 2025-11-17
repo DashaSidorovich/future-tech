@@ -1254,7 +1254,7 @@ button[aria-label]::before {
 .resources {
   padding-left: 5rem;
   padding-bottom: 5rem;
-  background: url(../../images/hero-bg.png) 0 0/cover no-repeat;
+  background: url(/images/hero-bg.png) 0 0/cover no-repeat;
   display: flex;
   flex-direction: column;
   row-gap: 1.875rem;
