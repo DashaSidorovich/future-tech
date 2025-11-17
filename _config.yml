@@ -13,4 +13,10 @@ sass:
   sass_dir: assets/css
 
 include:
-  - ".html"
+  - "*.html"
+  
+defaults:
+  - scope:
+      path: "*.html"
+    values:
+      layout: default
