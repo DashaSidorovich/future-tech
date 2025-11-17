@@ -7,7 +7,7 @@
     border-block: var(--border);
 
     &-inner {
-      &:has(.section__link) {
+      &:has(.section__actions) {
         display: grid;
         align-items: center;
         column-gap: 1rem;
@@ -39,5 +39,9 @@
 
   &__link {
     max-width: rem(360);
+  }
+
+  &__link, &__actions {
+    width: 100%;
   }
 }

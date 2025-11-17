@@ -1,4 +1,4 @@
-@use '../helpers' as *;
+@use "../helpers" as *;
 
 .card {
   @include tablet-above {
@@ -101,6 +101,19 @@
         grid-template-columns: repeat(3, 1fr);
       }
     }
+
+    &--3-cols-alt {
+      gap: fluid(50, 20) rem(20);
+      grid-template-columns: repeat(3, 1fr);
+
+      @include laptop {
+        column-gap: rem(16);
+      }
+
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 
   &__cell {
@@ -117,8 +130,8 @@
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-areas:
-        'other link'
-        'other link';
+        "other link"
+        "other link";
       align-items: center;
       gap: fluid(14, 10) rem(20);
     }
@@ -173,6 +186,7 @@
       @include mobile-s {
         font-size: rem(14);
       }
+      font-weight: 500;
     }
   }
 }
