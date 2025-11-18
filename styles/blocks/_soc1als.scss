@@ -3,6 +3,37 @@
 .soc1als {
   --size: #{rem(24)};
 
+  &--3-cols {
+    width: 100%;
+    max-width: rem(308);
+
+    .soc1als {
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: rem(10);
+
+        @include laptop {
+          column-gap: rem(10);
+        }
+      }
+
+      &__link {
+        width: 100%;
+        background-color: var(--color-dark-10);
+        border: var(--border);
+        border-radius: rem(6);
+        height: rem(60);
+
+        @include flex-center;
+
+        @include laptop {
+          height: rem(48);
+        }
+      }
+    }
+  }
+
   &__list {
     display: flex;
     align-items: center;
